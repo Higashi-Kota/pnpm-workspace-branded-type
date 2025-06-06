@@ -1,0 +1,11 @@
+{
+  "extends": "@ecommerce/shared-config/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "src/types/**/*.d.ts"],
+  "exclude": ["dist", "node_modules"]
+}

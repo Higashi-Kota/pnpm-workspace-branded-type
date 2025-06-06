@@ -1,0 +1,31 @@
+{
+  "name": "pnpm-workspace-branded-type",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*",
+    "packages/features/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "clean:modules": "find packages -type d -name node_modules -prune -exec rm -rf {} +",
+    "clean:build": "find packages -name '*.tsbuildinfo' -delete && find packages -type d -name dist -exec rm -rf {} +",
+    "clean:all": "pnpm run clean:build && rm -rf dist node_modules pnpm-lock.yaml && pnpm run clean:modules",
+    "dev:~app": "pnpm --filter ~app dev",
+    "dev:watch": "concurrently \"pnpm -r build:watch\" \"pnpm --filter ~app dev\" --names \"build,~app\" --prefix-colors \"yellow,green\"",
+    "build:analyze": "pnpm -r build:analyze",
+    "build:dev": "pnpm -r build:dev",
+    "build:test": "pnpm -r build:test",
+    "build:stg": "pnpm -r build:stg",
+    "build:prod": "pnpm -r build:prod",
+    "format": "pnpm -r --parallel format",
+    "format:fix": "pnpm -r --parallel format:fix",
+    "typecheck": "pnpm -r --parallel typecheck",
+    "package:check": "pnpm -r --parallel package:check",
+    "test": "pnpm -r --parallel test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "concurrently": "^8.2.2"
+  }
+}

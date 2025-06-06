@@ -1,0 +1,44 @@
+{
+  "dependencies": {
+    "@ecommerce/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@ecommerce/shared-config": "workspace:*",
+    "@types/node": "^20.17.19",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "knip": "^5.44.5",
+    "taze": "^0.16.9",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.14",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "exports": {
+    "./domains": {
+      "import": "./dist/domains/index.js",
+      "types": "./dist/domains/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "name": "@ecommerce/order",
+  "sideEffects": false,
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist node_modules *.tsbuildinfo",
+    "build:dev": "tsup --env.NODE_ENV=development",
+    "build:test": "tsup --env.NODE_ENV=test",
+    "build:stg": "tsup --env.NODE_ENV=staging",
+    "build:prod": "tsup --env.NODE_ENV=production",
+    "build:watch": "tsup --watch --env.NODE_ENV=development",
+    "package:check": "taze",
+    "knip": "knip --include dependencies,optionalPeerDependencies,unlisted,binaries,unresolved",
+    "typecheck": "tsc --build",
+    "format": "biome format --write .",
+    "format:fix": "biome check . --fix --unsafe",
+    "dev": "tsup --watch",
+    "dev:tsc": "tsc --build --watch"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}

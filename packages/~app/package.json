@@ -1,0 +1,41 @@
+{
+  "dependencies": {
+    "@ecommerce/config": "workspace:*",
+    "@ecommerce/inventory": "workspace:*",
+    "@ecommerce/order": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@ecommerce/shared-config": "workspace:*",
+    "@types/node": "^20.17.19",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "knip": "^5.44.5",
+    "rollup-plugin-visualizer": "^5.14.0",
+    "sass-embedded": "^1.89.1",
+    "taze": "^0.16.9",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.14"
+  },
+  "name": "~app",
+  "private": true,
+  "scripts": {
+    "knip": "knip --include dependencies,optionalPeerDependencies,unlisted,binaries,unresolved",
+    "typecheck": "tsc --build",
+    "package:check": "taze",
+    "format": "biome format --write .",
+    "format:fix": "biome check . --fix --unsafe",
+    "dev": "vite --force --port 3000",
+    "build:analyze": "tsc --build && vite build --mode analyze",
+    "build:dev": "tsc --build && vite build --mode dev",
+    "build:prod": "tsc --build && vite build --mode production",
+    "build:stg": "tsc --build && vite build --mode staging",
+    "build:test": "tsc --build && vite build --mode test",
+    "preview": "vite preview --port 3000"
+  },
+  "type": "module",
+  "version": "0.0.0"
+}
