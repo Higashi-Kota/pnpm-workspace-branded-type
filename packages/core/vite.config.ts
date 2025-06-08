@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        'components/index': resolve(__dirname, 'src/components/index.ts'),
+        'domains/index': resolve(__dirname, 'src/domains/index.ts'),
       },
       // name: '@ecommerce/order', // 複数エントリでは不要
       formats: ['es'], // ESMのみでtree shaking対応
@@ -26,19 +26,12 @@ export default defineConfig({
       // 🔑 外部依存関係を明示的に指定
       external: [
         /^@ecommerce\//, // @ecommerce/で始まる全てのパッケージを外部化
-        'react',
-        'react-dom',
       ],
       output: {
         preserveModules: true, // 🔑 個別モジュールを保持
         preserveModulesRoot: 'src', // 🔑 srcディレクトリ構造を保持
         entryFileNames: '[name].js',
         exports: 'named', // 🔑 named exportを使用
-        // 🔑 外部依存関係のグローバル変数指定（必要に応じて）
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
       },
     },
     target: 'esnext', // 🔑 最新のES仕様を使用

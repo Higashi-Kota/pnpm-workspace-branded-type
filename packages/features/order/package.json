@@ -1,11 +1,15 @@
 {
   "dependencies": {
-    "@ecommerce/types": "workspace:*"
+    "@ecommerce/core": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@ecommerce/shared-config": "workspace:*",
     "@types/node": "^20.17.19",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.8.0",
     "knip": "^5.44.5",
     "taze": "^0.16.9",
@@ -15,9 +19,9 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "exports": {
-    "./domains": {
-      "import": "./dist/domains/index.js",
-      "types": "./dist/domains/index.d.ts"
+    "./components": {
+      "import": "./dist/components/index.js",
+      "types": "./dist/components/index.d.ts"
     }
   },
   "files": ["dist"],

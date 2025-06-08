@@ -2,7 +2,8 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: {
-    'components/index': 'src/components/index.ts',
+    'inventory/domains/index': 'src/inventory/domains/index.ts',
+    'order/domains/index': 'src/order/domains/index.ts',
   },
 
   // ESMのみ（tree shaking対応）
@@ -35,8 +36,6 @@ export default defineConfig({
   // 外部依存関係を指定
   external: [
     /^@ecommerce\//, // @ecommerce/で始まる全てのパッケージを外部化
-    'react',
-    'react-dom',
   ],
 
   // バンドルを有効化
@@ -62,6 +61,6 @@ export default defineConfig({
 
   // 成功時のコールバック
   onSuccess: async () => {
-    console.log('✅ @ecommerce/order built successfully!')
+    console.log('✅ @ecommerce/core built successfully!')
   },
 })

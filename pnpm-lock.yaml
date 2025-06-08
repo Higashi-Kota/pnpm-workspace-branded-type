@@ -48,18 +48,18 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@20.19.0)(rollup@4.42.0)(typescript@5.8.3)(vite@5.4.19(@types/node@20.19.0)(sass-embedded@1.89.1))
 
-  packages/features/inventory:
+  packages/core:
     dependencies:
       '@ecommerce/types':
         specifier: workspace:*
-        version: link:../../types
+        version: link:../types
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
       '@ecommerce/shared-config':
         specifier: workspace:*
-        version: link:../../shared-config
+        version: link:../shared-config
       '@types/node':
         specifier: ^20.17.19
         version: 20.19.0
@@ -85,11 +85,17 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@20.19.0)(rollup@4.42.0)(typescript@5.8.3)(vite@5.4.19(@types/node@20.19.0)(sass-embedded@1.89.1))
 
-  packages/features/order:
+  packages/features/inventory:
     dependencies:
-      '@ecommerce/types':
+      '@ecommerce/core':
         specifier: workspace:*
-        version: link:../../types
+        version: link:../../core
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -100,6 +106,61 @@ importers:
       '@types/node':
         specifier: ^20.17.19
         version: 20.19.0
+      '@types/react':
+        specifier: ^18.3.18
+        version: 18.3.23
+      '@types/react-dom':
+        specifier: ^18.3.5
+        version: 18.3.7(@types/react@18.3.23)
+      '@vitejs/plugin-react-swc':
+        specifier: ^3.8.0
+        version: 3.10.1(vite@5.4.19(@types/node@20.19.0)(sass-embedded@1.89.1))
+      knip:
+        specifier: ^5.44.5
+        version: 5.60.2(@types/node@20.19.0)(typescript@5.8.3)
+      taze:
+        specifier: ^0.16.9
+        version: 0.16.9
+      tsup:
+        specifier: ^8.3.5
+        version: 8.5.0(@microsoft/api-extractor@7.52.8(@types/node@20.19.0))(@swc/core@1.11.31)(jiti@2.4.2)(postcss@8.5.4)(tsx@4.19.4)(typescript@5.8.3)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.8.3
+      vite:
+        specifier: ^5.4.14
+        version: 5.4.19(@types/node@20.19.0)(sass-embedded@1.89.1)
+      vite-plugin-dts:
+        specifier: ^4.5.4
+        version: 4.5.4(@types/node@20.19.0)(rollup@4.42.0)(typescript@5.8.3)(vite@5.4.19(@types/node@20.19.0)(sass-embedded@1.89.1))
+
+  packages/features/order:
+    dependencies:
+      '@ecommerce/core':
+        specifier: workspace:*
+        version: link:../../core
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@biomejs/biome':
+        specifier: 1.9.4
+        version: 1.9.4
+      '@ecommerce/shared-config':
+        specifier: workspace:*
+        version: link:../../shared-config
+      '@types/node':
+        specifier: ^20.17.19
+        version: 20.19.0
+      '@types/react':
+        specifier: ^18.3.18
+        version: 18.3.23
+      '@types/react-dom':
+        specifier: ^18.3.5
+        version: 18.3.7(@types/react@18.3.23)
       '@vitejs/plugin-react-swc':
         specifier: ^3.8.0
         version: 3.10.1(vite@5.4.19(@types/node@20.19.0)(sass-embedded@1.89.1))
@@ -162,6 +223,9 @@ importers:
       '@ecommerce/config':
         specifier: workspace:*
         version: link:../config
+      '@ecommerce/core':
+        specifier: workspace:*
+        version: link:../core
       '@ecommerce/inventory':
         specifier: workspace:*
         version: link:../features/inventory

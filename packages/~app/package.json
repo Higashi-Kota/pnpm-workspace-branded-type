@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ecommerce/core": "workspace:*",
     "@ecommerce/config": "workspace:*",
     "@ecommerce/inventory": "workspace:*",
     "@ecommerce/order": "workspace:*",

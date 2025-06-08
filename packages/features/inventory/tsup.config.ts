@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: {
-    'domains/index': 'src/domains/index.ts',
+    'components/index': 'src/components/index.ts',
   },
 
   // ESMのみ（tree shaking対応）
@@ -35,6 +35,8 @@ export default defineConfig({
   // 外部依存関係を指定
   external: [
     /^@ecommerce\//, // @ecommerce/で始まる全てのパッケージを外部化
+    'react',
+    'react-dom',
   ],
 
   // バンドルを有効化
