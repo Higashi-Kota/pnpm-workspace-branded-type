@@ -83,8 +83,9 @@ import "./side-effect-module"; // 常にバンドルされる
 | ----------------- | ---------------- | --------------- | ------------------ | -------------------------------------------------------------------------------------- |
 | **Webpack**       | ✅ v2+           | ✅ 完全対応     | ✅ 完全対応        | [Webpack Tree Shaking](https://webpack.js.org/guides/tree-shaking/)                    |
 | **Rollup**        | ✅ デフォルト    | ✅ 完全対応     | ✅ 対応            | [Rollup Tree Shaking](https://rollupjs.org/introduction/#tree-shaking)                 |
-| **esbuild**       | ✅ デフォルト    | ⚠️ 限定的       | ✅ 対応            | [esbuild Issues #1420](https://github.com/evanw/esbuild/issues/1420)                   |
+| **esbuild**       | ✅ デフォルト    | ⚠️ 既知の制限   | ✅ 対応            | [esbuild Issues #1420](https://github.com/evanw/esbuild/issues/1420)                   |
 | **Vite (Rollup)** | ✅ デフォルト    | ✅ 完全対応     | ✅ 完全対応        | [Vite Build Optimizations](https://vitejs.dev/guide/features.html#build-optimizations) |
+| **Rslib**         | ✅ デフォルト    | ✅ 完全対応     | ✅ 完全対応        | [Rslib Build](https://rslib.rs/guide/start/)                                           |
 
 ## 全体バレルの問題点と IDE 補完への影響
 
