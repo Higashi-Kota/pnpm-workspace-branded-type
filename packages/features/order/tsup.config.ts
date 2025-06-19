@@ -37,6 +37,7 @@ export default defineConfig({
     /^@ecommerce\//, // @ecommerce/で始まる全てのパッケージを外部化
     'react',
     'react-dom',
+    'react/jsx-runtime',
   ],
 
   // バンドルを有効化

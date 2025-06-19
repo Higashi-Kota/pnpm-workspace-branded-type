@@ -3,6 +3,11 @@ import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
+const isProduction = process.env.NODE_ENV === 'production'
+const isDevelopment = process.env.NODE_ENV === 'development'
+const isTest = process.env.NODE_ENV === 'test'
+const isStaging = process.env.NODE_ENV === 'staging'
+
 export default defineConfig({
   plugins: [
     react(),
@@ -35,15 +40,21 @@ export default defineConfig({
       },
     },
     target: 'esnext', // 🔑 最新のES仕様を使用
-    minify: false, // 🔑 minifyしない（利用側で行う）
-    // 🔑 バンドルサイズ警告とレポート設定
+    minify: isProduction, // 環境に応じてminify設定
+    // バンドルサイズ警告とレポート設定
     chunkSizeWarningLimit: 500,
     reportCompressedSize: true,
+    // ソースマップ設定（本番以外で有効）
+    sourcemap: isDevelopment || isTest || isStaging,
   },
   // 🔑 エイリアス設定（必要に応じて）
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
     },
+  },
+  // 成功時のコールバック
+  define: {
+    // 必要に応じて環境変数を定義
   },
 })
